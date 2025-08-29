@@ -15,7 +15,7 @@ It is an interactive program, which you can run via commandline
 `python bikeshare.py`
 
 **Prerequisite**
-PYthon must be installed on your machine and contain 
+Python 3.x must be installed on your machine and contain 
 following third party packages:
 - pandas
 - numpy
@@ -35,4 +35,3 @@ Currently following files are required:
 
 ### Credits
 This project is created based on the [Udacity](https://learn.udacity.com/) nanodegree _Programming for Data Science with Python_.
-
