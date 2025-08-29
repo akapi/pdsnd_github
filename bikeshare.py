@@ -27,32 +27,35 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     # get user input for city (chicago, new york city, washington).
     city = None
-    while not city:
+    while True:
         user_input = input("Enter the city (chicago, new york city, washington): ")
         user_input_formatted = user_input.strip().lower()
         if user_input_formatted in CITY_DATA:
             city = user_input_formatted
+            break
         else:
             print(f"Given input '{user_input}' is not accepted. Please enter a valid city") 
 
     # get user input for month (all, january, february, ... , june)
     month = None
-    while not month:
+    while True:
         user_input = input("Enter the month (all, january, february, ... , june): ")
         user_input_formatted = user_input.strip().lower()
         if user_input_formatted in MONTHS:
             month = user_input_formatted
+            break
         else:
             print(f"Given input '{user_input}' for month is not accepted. "
                   "Please enter a valid value") 
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = None
-    while not day:
+    while True:
         user_input = input("Enter the day (all, monday, tuesday, ... sunday): ")
         user_input_formatted = user_input.strip().lower()
         if user_input_formatted in DAYS:
             day = user_input_formatted
+            break
         else:
             print(f"Given input '{user_input}' for day is not accepted. "
                   "Please enter a valid value") 
@@ -180,7 +183,7 @@ def trip_duration_stats(df):
     total_travel_time = df['Travel Time'].sum()
     _print_duration(" * total travel time", total_travel_time)
 
-    # TO DO: display mean travel time
+    # display mean travel time
     mean_travel_time = df['Travel Time'].mean()
     _print_duration(" * mean travel time", mean_travel_time)
     
