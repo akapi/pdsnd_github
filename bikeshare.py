@@ -93,8 +93,11 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
-
+    """Displays statistics on the most frequent times of travel.
+    
+    Args:
+        df - Pandas DataFrame containing city data (filtered based on user input)
+    """
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -119,7 +122,11 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """Displays statistics on the most popular stations and trip.
+    
+    Args:
+        df - Pandas DataFrame containing city data (filtered based on user input)
+    """
 
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
@@ -143,8 +150,9 @@ def station_stats(df):
 def _print_duration(display_text, time_diff):
     """Display time duration in readable format
     
-    display_text: string to print before the time diff
-    time_diff: timedelta object
+    Args:
+        display_text: string to print before the time diff
+        time_diff: timedelta object
     """
     days = time_diff.days
     hours = time_diff.seconds // 3600
@@ -154,7 +162,11 @@ def _print_duration(display_text, time_diff):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """Displays statistics on the total and average trip duration.
+    
+    Args:
+        df - Pandas DataFrame containing city data (filtered based on user input)
+    """
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
@@ -175,7 +187,11 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users.
+    
+    Args:
+        df - Pandas DataFrame containing city data (filtered based on user input)
+    """
 
     print('\nCalculating User Stats...\n')
     start_time = time.time()
