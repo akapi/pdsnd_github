@@ -215,16 +215,18 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-        show_raw_data = None
-        while show_raw_data is None:
+        show_raw_data = False
+        while True:
            user_input_received = input('\nWould you like to see raw data? Enter yes or no.\n')
            if user_input_received.lower().strip() == 'yes':
                show_raw_data = True
+               break
            elif user_input_received.lower().strip() == 'no':
                show_raw_data = False
+               break
            else:
                print("Input '%s' not accepted." % user_input_received)
-        
+
         item_index = 0
         chunk_size = 5
         while show_raw_data:
