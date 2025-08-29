@@ -25,6 +25,9 @@ If you want to add more cities you can extend
 the Python dictionary `CITY_DATA` within 
 the file `bikeshare.py`.
 
+**Limiation**
+Currently the filtering by month is possible only for the months
+'january', 'february', 'march', 'april', 'may', 'june'.
 
 ### Files used
 For each supported city a corresponding CSV file is needed. E.g. _chicago.csv_ for _Chicago_
