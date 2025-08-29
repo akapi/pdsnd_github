@@ -14,6 +14,7 @@ MONTHS = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
 DAYS = ['all', 'monday', 'tuesday', 'wednesday', 'thursday',
         'friday', 'saturday', 'sunday']
 
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -34,7 +35,6 @@ def get_filters():
         else:
             print(f"Given input '{user_input}' is not accepted. Please enter a valid city") 
 
-
     # get user input for month (all, january, february, ... , june)
     month = None
     while not month:
@@ -43,7 +43,8 @@ def get_filters():
         if user_input_formatted in MONTHS:
             month = user_input_formatted
         else:
-            print(f"Given input '{user_input}' for month is not accepted. Please enter a valid value") 
+            print(f"Given input '{user_input}' for month is not accepted. "
+                  "Please enter a valid value") 
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = None
@@ -53,7 +54,8 @@ def get_filters():
         if user_input_formatted in DAYS:
             day = user_input_formatted
         else:
-            print(f"Given input '{user_input}' for day is not accepted. Please enter a valid value") 
+            print(f"Given input '{user_input}' for day is not accepted. "
+                  "Please enter a valid value") 
 
     print('-'*40)
     return city, month, day
@@ -101,7 +103,7 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-   # display the most common month
+    # display the most common month
     most_common_month = df['month'].mode()[0]
     month_name = MONTHS[most_common_month].title()
     print(' * most common month:', month_name)
@@ -118,7 +120,6 @@ def time_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
 
 
 def station_stats(df):
@@ -146,6 +147,7 @@ def station_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
+
 
 def _print_duration(display_text, time_diff):
     """Display time duration in readable format
@@ -232,16 +234,18 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-        show_raw_data = None
-        while show_raw_data is None:
+        show_raw_data = False
+        while True:
            user_input_received = input('\nWould you like to see raw data? Enter yes or no.\n')
            if user_input_received.lower().strip() == 'yes':
                show_raw_data = True
+               break
            elif user_input_received.lower().strip() == 'no':
                show_raw_data = False
+               break
            else:
                print("Input '%s' not accepted." % user_input_received)
-        
+
         item_index = 0
         chunk_size = 5
         while show_raw_data:
@@ -264,7 +268,8 @@ def main():
             if not continue_print:
                 break
 
-        restart = input('\nWould you like to restart? Enter yes to restart. Any other key to exit.\n')
+        restart = input('\nWould you like to restart? Enter yes to restart. "'
+                        '"Any other key to exit.\n')
         if restart.lower() != 'yes':
             break
 
